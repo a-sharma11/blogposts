@@ -1,8 +1,8 @@
 # Site settings
-title: My Blog
-description: A collection of blog posts
-author: Your Name
-email: your.email@example.com
+title: Distributed thoughts on everything software
+description: Distributed thoughts on everything software
+author: Ashish Sharma
+email: a-sharma@outlook.com
 url: "" # Leave empty for GitHub Pages, or set to your custom domain
 baseurl: "" # Leave empty if repository name is username.github.io, otherwise use "/repository-name"
 
