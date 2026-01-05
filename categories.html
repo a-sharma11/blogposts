@@ -1,0 +1,40 @@
+---
+layout: default
+title: Categories
+---
+
+<div class="categories-page">
+  <h1>Blog Categories</h1>
+  
+  <div class="categories-list">
+    {% assign categories = site.posts | map: "categories" | flatten | uniq | sort %}
+    
+    {% for category in categories %}
+      {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
+      <div class="category-item">
+        <h2>
+          <a href="{{ '/' | relative_url }}{{ category }}.html">{{ category | capitalize }}</a>
+        </h2>
+        <p class="category-count">{{ category_posts.size }} post{{ category_posts.size | pluralize }}</p>
+        <p class="category-description">
+          {% if category == 'ai' %}
+            Articles about Artificial Intelligence, Machine Learning, and AI technologies.
+          {% elsif category == 'microservices' %}
+            Posts about microservices architecture, design patterns, and best practices.
+          {% else %}
+            Posts about {{ category }}.
+          {% endif %}
+        </p>
+        <ul class="recent-posts">
+          {% for post in category_posts limit: 3 %}
+          <li>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
