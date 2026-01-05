@@ -63,15 +63,28 @@ After enabling GitHub Pages, your site will be available at:
 To test your site locally before pushing to GitHub:
 
 1. Install Ruby and Bundler (if not already installed)
-2. Install dependencies:
-   ```bash
-   bundle install
-   ```
-3. Run Jekyll server:
+   - Ruby 2.6+ is required (GitHub Pages uses Jekyll 3.9.0)
+   - If you have Ruby 2.6, install gems locally to avoid permission issues:
+     ```bash
+     bundle install --path vendor/bundle
+     ```
+   - If you have Ruby 3.0+, you can use:
+     ```bash
+     bundle install
+     ```
+
+2. Run Jekyll server:
    ```bash
    bundle exec jekyll serve
    ```
-4. Open your browser to `http://localhost:4000`
+   Or if you installed to vendor/bundle:
+   ```bash
+   bundle exec jekyll serve
+   ```
+
+3. Open your browser to `http://localhost:4000`
+
+**Note**: If you encounter Ruby version issues, you can skip local development and push directly to GitHub. GitHub Pages will build your site automatically using Jekyll 3.9.0.
 
 ## Adding New Posts
 

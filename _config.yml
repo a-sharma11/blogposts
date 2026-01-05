@@ -3,11 +3,14 @@ title: Distributed thoughts on everything software
 description: Distributed thoughts on everything software
 author: Ashish Sharma
 email: a-sharma@outlook.com
-url: "" # Leave empty for GitHub Pages, or set to your custom domain
-baseurl: "" # Leave empty if repository name is username.github.io, otherwise use "/repository-name"
+url: "https://a-sharma11.github.io" # Your GitHub Pages URL
+baseurl: "/blogposts" # Repository name (use "" if repository is username.github.io)
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 theme: minima
 plugins:
   - jekyll-feed

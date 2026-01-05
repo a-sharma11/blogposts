@@ -1,9 +1,16 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 4.3"
+# GitHub Pages uses Jekyll 3.9.0, which is compatible with Ruby 2.6+
+gem "jekyll", "~> 3.9.0"
 gem "minima", "~> 2.5"
 gem "jekyll-feed", "~> 0.12"
 gem "jekyll-sitemap", "~> 1.4"
+
+# Lock ffi to a version compatible with Ruby 2.6
+gem "ffi", "~> 1.15.5"
+
+# GitHub Flavored Markdown support for kramdown
+gem "kramdown-parser-gfm"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
