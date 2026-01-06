@@ -1,0 +1,64 @@
+<svg width="600" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="700" fill="#f8f9fa" rx="8"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#2c3e50">Multi-Agent Intelligence Pipeline</text>
+  
+  <!-- User Uploads Form -->
+  <rect x="50" y="60" width="500" height="50" rx="6" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="300" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">USER UPLOADS FORM</text>
+  
+  <!-- Arrow 1 -->
+  <path d="M 300 110 L 300 140" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Agent 1: Form Analyzer -->
+  <rect x="50" y="150" width="500" height="120" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="300" y="175" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">AGENT 1: Form Analyzer</text>
+  <text x="300" y="195" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">(GPT-4 Vision)</text>
+  <line x1="70" y1="210" x2="530" y2="210" stroke="#4caf50" stroke-width="1"/>
+  <text x="70" y="230" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Understands form context</text>
+  <text x="70" y="248" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Identifies field types</text>
+  <text x="300" y="230" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Maps to standard schema</text>
+  <text x="300" y="248" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Extracts instructions</text>
+  
+  <!-- Arrow 2 -->
+  <path d="M 300 270 L 300 300" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Agent 2: Document Processor -->
+  <rect x="50" y="310" width="500" height="120" rx="6" fill="#fff3e0" stroke="#ff9800" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="300" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">AGENT 2: Document Processor</text>
+  <text x="300" y="355" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">(Document AI + GPT Vision)</text>
+  <line x1="70" y1="370" x2="530" y2="370" stroke="#ff9800" stroke-width="1"/>
+  <text x="70" y="390" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Fast extraction (Doc AI)</text>
+  <text x="70" y="408" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Context understanding (GPT Vision)</text>
+  <text x="300" y="390" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Standardizes data</text>
+  
+  <!-- Arrow 3 -->
+  <path d="M 300 430 L 300 460" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Agent 3: Field Matcher -->
+  <rect x="50" y="470" width="500" height="120" rx="6" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="300" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">AGENT 3: Field Matcher</text>
+  <text x="300" y="515" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">(GPT-4 Reasoning)</text>
+  <line x1="70" y1="530" x2="530" y2="530" stroke="#9c27b0" stroke-width="1"/>
+  <text x="70" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Understands relationships</text>
+  <text x="70" y="568" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Maps data to form fields</text>
+  <text x="300" y="550" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">• Handles edge cases</text>
+  
+  <!-- Arrow 4 -->
+  <path d="M 300 590 L 300 620" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Result: Filled Form -->
+  <rect x="50" y="630" width="500" height="50" rx="6" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="300" y="655" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="white">RESULT: Filled Form</text>
+  <text x="300" y="670" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#d5f4e6">(Contextually Accurate)</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>
+
