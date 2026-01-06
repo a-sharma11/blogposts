@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="350" fill="#f9fafb"/>
+  
+  <!-- Choreographer Model (Left Side) -->
+  <!-- Three service circles with zigzag lines -->
+  <circle cx="100" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 80 110 L 90 130 L 100 110 L 110 130 L 120 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <circle cx="200" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 180 110 L 190 130 L 200 110 L 210 130 L 220 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <circle cx="300" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 280 110 L 290 130 L 300 110 L 310 130 L 320 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <!-- Choreographer (orange oval) -->
+  <ellipse cx="200" cy="250" rx="80" ry="35" fill="#ffa500" stroke="#cc8500" stroke-width="2"/>
+  <text x="200" y="256" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Choreographer</text>
+  
+  <!-- Arrows from Choreographer to services (pointing up) -->
+  <line x1="200" y1="215" x2="100" y2="140" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  <line x1="200" y1="215" x2="200" y2="140" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  <line x1="200" y1="215" x2="300" y2="140" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  
+  <!-- Label -->
+  <text x="200" y="310" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Choreographer model</text>
+  
+  <!-- Event based Model (Right Side) -->
+  <!-- Three service circles with zigzag lines -->
+  <circle cx="500" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 480 110 L 490 130 L 500 110 L 510 130 L 520 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <circle cx="600" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 580 110 L 590 130 L 600 110 L 610 130 L 620 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <circle cx="700" cy="100" r="40" fill="#e1f5ff" stroke="#0066cc" stroke-width="2"/>
+  <path d="M 680 110 L 690 130 L 700 110 L 710 130 L 720 110" stroke="#111827" stroke-width="2" fill="none"/>
+  
+  <!-- Event Bus (blue rectangle) - wider to accommodate all 3 circles -->
+  <rect x="450" y="220" width="300" height="40" rx="5" fill="#0066cc" stroke="#004499" stroke-width="2"/>
+  <text x="600" y="245" text-anchor="middle" font-size="14" font-weight="600" fill="#fff">Event Bus</text>
+  
+  <!-- Arrows from services to Event Bus (pointing down) -->
+  <line x1="500" y1="140" x2="500" y2="220" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  <line x1="600" y1="140" x2="600" y2="220" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  <line x1="700" y1="140" x2="700" y2="220" stroke="#111827" stroke-width="2.5" marker-end="url(#arrowhead-black)"/>
+  
+  <!-- Label -->
+  <text x="600" y="310" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Event based model</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead-black" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#111827"/>
+    </marker>
+  </defs>
+</svg>
+

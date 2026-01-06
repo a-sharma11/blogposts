@@ -1,0 +1,71 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f9fafb"/>
+  
+  <!-- Service-1 Circle -->
+  <circle cx="150" cy="200" r="60" fill="#e1f5ff" stroke="#0066cc" stroke-width="3"/>
+  <text x="150" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Service-1</text>
+  
+  <!-- Service-2 Circle -->
+  <circle cx="400" cy="200" r="60" fill="#e1f5ff" stroke="#0066cc" stroke-width="3"/>
+  <text x="400" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Service-2</text>
+  
+  <!-- Service-3 Circle -->
+  <circle cx="650" cy="200" r="60" fill="#e1f5ff" stroke="#0066cc" stroke-width="3"/>
+  <text x="650" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#111827">Service-3</text>
+  
+  <!-- Dependencies d1, d2, d3 above Service-1 (orange ovals) -->
+  <ellipse cx="120" cy="100" rx="30" ry="18" fill="#ffa500" stroke="#cc8500" stroke-width="2"/>
+  <text x="120" y="106" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">d1</text>
+  
+  <ellipse cx="150" cy="100" rx="30" ry="18" fill="#ffa500" stroke="#cc8500" stroke-width="2"/>
+  <text x="150" y="106" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">d2</text>
+  
+  <ellipse cx="180" cy="100" rx="30" ry="18" fill="#ffa500" stroke="#cc8500" stroke-width="2"/>
+  <text x="180" y="106" text-anchor="middle" font-size="12" font-weight="600" fill="#fff">d3</text>
+  
+  <!-- Arrows from dependencies to Service-1 (gray) -->
+  <line x1="120" y1="118" x2="130" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  <line x1="150" y1="118" x2="150" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  <line x1="180" y1="118" x2="170" y2="150" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  
+  <!-- Zigzag lines inside services (#A, #B, #C) -->
+  <path d="M 130 160 L 140 180 L 150 160 L 160 180 L 170 160" stroke="#0066cc" stroke-width="2.5" fill="none"/>
+  <text x="150" y="220" text-anchor="middle" font-size="11" font-weight="600" fill="#0066cc">#A</text>
+  
+  <path d="M 380 160 L 390 180 L 400 160 L 410 180 L 420 160" stroke="#0066cc" stroke-width="2.5" fill="none"/>
+  <text x="400" y="220" text-anchor="middle" font-size="11" font-weight="600" fill="#0066cc">#B</text>
+  
+  <path d="M 630 160 L 640 180 L 650 160 L 660 180 L 670 160" stroke="#0066cc" stroke-width="2.5" fill="none"/>
+  <text x="650" y="220" text-anchor="middle" font-size="11" font-weight="600" fill="#0066cc">#C</text>
+  
+  <!-- Input Request arrow to Service-1 (from left) -->
+  <line x1="50" y1="200" x2="90" y2="200" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+  <text x="70" y="190" text-anchor="middle" font-size="11" fill="#4b5563">Input Request</text>
+  
+  <!-- Arrow from Service-1 to Service-2 (horizontal) -->
+  <line x1="210" y1="200" x2="340" y2="200" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Arrow from Service-2 to Service-3 (horizontal) -->
+  <line x1="460" y1="200" x2="590" y2="200" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Return arrow from Service-3 to Service-2 (curved downward then upward) -->
+  <path d="M 650 260 Q 525 320 400 260" stroke="#0066cc" stroke-width="2.5" fill="none" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Return arrow from Service-2 to Service-1 (curved downward then upward) -->
+  <path d="M 400 260 Q 275 320 150 260" stroke="#0066cc" stroke-width="2.5" fill="none" marker-end="url(#arrowhead-blue)"/>
+  
+  <!-- Output #C from Service-1 (to the left, from bottom-left) -->
+  <line x1="90" y1="260" x2="50" y2="260" stroke="#0066cc" stroke-width="3" marker-end="url(#arrowhead-blue)"/>
+  <text x="70" y="275" text-anchor="middle" font-size="11" font-weight="600" fill="#0066cc">#C</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#0066cc"/>
+    </marker>
+  </defs>
+</svg>
