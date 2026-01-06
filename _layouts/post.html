@@ -4,27 +4,38 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
+    <div class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: inline-block; vertical-align: middle; margin-right: 0.25rem;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
         {{ page.date | date: date_format }}
       </time>
       {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}
-      {%- if page.categories.size > 0 -%}
-        • <span class="post-categories">
-          Categories: 
-          {% for category in page.categories %}
-            <a href="{{ '/' | relative_url }}{{ category }}.html" class="category-link">{{ category | capitalize }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endfor %}
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <span class="p-author h-card" itemprop="name">• {{ page.author }}</span>
         </span>
       {%- endif -%}
-    </p>
+      {%- if page.categories.size > 0 -%}
+        <div class="post-categories" style="margin-top: var(--spacing-sm);">
+          {% for category in page.categories %}
+            <a href="{{ '/' | relative_url }}{{ category }}.html" class="category-badge">{{ category | capitalize }}</a>
+          {% endfor %}
+        </div>
+      {%- endif -%}
+    </div>
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
+  </div>
+
+  <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 2px solid var(--border-light);">
+    <p style="text-align: center; margin-bottom: var(--spacing-md);">
+      <a href="{{ '/' | relative_url }}" style="color: var(--primary-color); font-weight: 600;">← Back to home</a>
+    </p>
   </div>
 
   {%- if site.disqus.shortname -%}

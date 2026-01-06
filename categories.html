@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Categories
+hide_sidebar: true
 ---
 
 <div class="categories-page">
@@ -15,7 +16,10 @@ title: Categories
         <h2>
           <a href="{{ '/' | relative_url }}{{ category }}.html">{{ category | capitalize }}</a>
         </h2>
-        <p class="category-count">{{ category_posts.size }} post{{ category_posts.size | pluralize }}</p>
+        <p class="category-count">
+          <span class="count-number">{{ category_posts.size }}</span>
+          <span class="count-label">{% if category_posts.size == 1 %}article{% else %}articles{% endif %}</span>
+        </p>
         <p class="category-description">
           {% if category == 'ai' %}
             Articles about Artificial Intelligence, Machine Learning, and AI technologies.

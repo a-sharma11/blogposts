@@ -1,0 +1,19 @@
+<aside class="sidebar" role="complementary">
+  <div class="sidebar-content">
+    <h3 class="sidebar-title">Categories</h3>
+    <nav class="sidebar-nav">
+      {% assign categories = site.posts | map: "categories" | flatten | uniq | sort %}
+      {% for category in categories %}
+        {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
+        <a href="{{ '/' | relative_url }}{{ category }}.html" class="sidebar-link">
+          <span class="sidebar-link-text">{{ category | capitalize }}</span>
+          <span class="sidebar-link-count">{{ category_posts.size }}</span>
+        </a>
+      {% endfor %}
+    </nav>
+    <div class="sidebar-footer">
+      <a href="{{ '/categories' | relative_url }}" class="sidebar-view-all">View all categories →</a>
+    </div>
+  </div>
+</aside>
+
