@@ -142,6 +142,12 @@ a:hover {
   align-items: center;
 }
 
+.site-header .wrapper > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .site-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -161,6 +167,7 @@ a:hover {
   gap: var(--spacing-md);
   align-items: center;
   flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
 }
 
 .site-nav .page-link {

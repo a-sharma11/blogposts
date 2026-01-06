@@ -27,7 +27,13 @@
   <body>
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title" href="{{ '/' | relative_url }}" aria-label="Home" style="display: block; text-align: center;">{{ site.title }}</a>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <a class="site-title" href="{{ '/' | relative_url }}" aria-label="Home">{{ site.title }}</a>
+          <nav class="site-nav">
+            <a href="{{ '/' | relative_url }}" class="page-link">Home</a>
+            <a href="{{ '/about' | relative_url }}" class="page-link">About</a>
+          </nav>
+        </div>
       </div>
     </header>
 

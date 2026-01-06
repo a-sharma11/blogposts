@@ -47,3 +47,4 @@ Companies should balance profit with their impact on society. This includes ethi
 
 Management isn't just about numbers and processes—it requires knowledge from many fields like psychology, ethics, and history. Companies like Procter & Gamble value diverse perspectives to drive innovation.
 
+
