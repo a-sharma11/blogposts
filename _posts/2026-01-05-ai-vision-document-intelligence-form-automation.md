@@ -9,6 +9,10 @@ categories: ai
 
 ---
 
+<div class="video-container" style="margin-bottom: 2rem;">
+  <iframe src="https://www.youtube.com/embed/D_DhYXeEUWk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 Ever filled out a passport application, DMV form, or immigration paperwork and thought:
 
 > "Why am I typing my name and address for the 17th time… when it's already on my ID?"
