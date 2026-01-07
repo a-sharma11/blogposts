@@ -1,29 +1,39 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="post-header">
-    <div class="post-meta-top">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+<article class="max-w-[860px] mx-auto bg-bg py-[26px] px-[22px] h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="border-b border-hairline pb-[22px] mb-[22px]">
+    <div class="flex flex-wrap items-center gap-[10px] text-[13px] text-muted mb-[10px]">
+      <time class="dt-published text-muted" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
         {{ page.date | date: date_format }}
       </time>
       {%- if page.categories.size > 0 -%}
         {% for category in page.categories %}
-          <a href="{{ '/' | relative_url }}{{ category }}.html" class="category-badge-inline">{{ category | capitalize }}</a>
+          <a href="{{ '/' | relative_url }}{{ category }}.html" class="inline-block px-[10px] py-[4px] bg-bg text-text border border-hairline rounded-full text-[13px] font-medium capitalize no-underline transition-all hover:bg-soft hover:no-underline">{{ category | capitalize }}</a>
         {% endfor %}
       {%- endif -%}
     </div>
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <h1 class="text-[clamp(28px,4vw,40px)] mb-0 text-text leading-[1.15] tracking-tight font-bold p-name" itemprop="name headline">{{ page.title | escape }}</h1>
   </header>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+  <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-[18px] lg:gap-[28px]">
+    <div class="text-base leading-reading text-text tracking-[0.1px] e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+    <aside class="lg:sticky lg:top-[100px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto space-y-[14px]">
+      {% if page.callout %}
+      <div class="callout-sidebar">
+        {% if page.callout.title %}<h3>{{ page.callout.title }}</h3>{% endif %}
+        {% if page.callout.content %}{{ page.callout.content | markdownify }}{% endif %}
+      </div>
+      {% endif %}
+    </aside>
   </div>
 
-  <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 2px solid var(--border-light);">
-    <p style="text-align: center; margin-bottom: var(--spacing-md);">
-      <a href="{{ '/' | relative_url }}" style="color: var(--primary-color); font-weight: 600;">← Back to home</a>
+  <div class="mt-[40px] pt-[18px] border-t border-hairline">
+    <p class="text-center mb-[14px]">
+      <a href="{{ '/' | relative_url }}" class="text-link font-semibold">← Back to home</a>
     </p>
   </div>
 

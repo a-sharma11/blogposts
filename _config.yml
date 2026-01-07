@@ -26,4 +26,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .well-known
+  - package.json
+  - package-lock.json
+  - tailwind.config.js
+  - assets/css/input.css
 

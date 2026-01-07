@@ -25,35 +25,30 @@
     {% endif %}
   </head>
   <body>
-    <header class="site-header" role="banner">
-      <div class="wrapper">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <a class="site-title" href="{{ '/' | relative_url }}" aria-label="Home">{{ site.title }}</a>
-          <nav class="site-nav">
-            <a href="{{ '/' | relative_url }}" class="page-link">Home</a>
-            <a href="{{ '/about' | relative_url }}" class="page-link">About</a>
+    <header class="bg-bg border-b border-hairline py-[14px] lg:py-[22px] sticky top-0 z-[100]" role="banner">
+      <div class="max-w-[860px] mx-auto px-[14px] lg:px-[22px]">
+        <div class="flex flex-col items-center">
+          <a class="text-2xl font-bold text-text m-0 tracking-[-0.01em] transition-colors hover:text-link hover:no-underline" href="{{ '/' | relative_url }}" aria-label="Home">{{ site.title }}</a>
+          <nav class="flex gap-y-[10px] gap-x-[14px] items-center flex-wrap mt-[10px]">
+            <a href="{{ '/' | relative_url }}" class="text-text font-medium px-[10px] py-[6px] border border-hairline rounded-full bg-bg text-[0.9375rem] transition-all hover:bg-soft hover:no-underline">Home</a>
+            <a href="{{ '/about' | relative_url }}" class="text-text font-medium px-[10px] py-[6px] border border-hairline rounded-full bg-bg text-[0.9375rem] transition-all hover:bg-soft hover:no-underline">About</a>
           </nav>
         </div>
       </div>
     </header>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper layout-container">
-        {% unless page.hide_sidebar %}
-        {% include sidebar.html %}
-        {% endunless %}
-        <div class="main-content">
-          {{ content }}
-        </div>
+    <main class="min-h-[calc(100vh-200px)] py-[26px] lg:py-[40px] bg-bg" aria-label="Content">
+      <div class="max-w-[860px] mx-auto px-[14px] lg:px-[22px]">
+        {{ content }}
       </div>
     </main>
 
-    <footer class="site-footer" role="contentinfo">
-      <div class="wrapper">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}. All rights reserved.</p>
+    <footer class="bg-bg text-muted py-[18px] lg:py-[22px] mt-[26px] lg:mt-[40px] border-t border-hairline" role="contentinfo">
+      <div class="max-w-[860px] mx-auto px-[14px] lg:px-[22px] text-center">
+        <p class="m-0 text-muted text-[13px]">&copy; {{ 'now' | date: "%Y" }} {{ site.author | default: site.title }}. All rights reserved.</p>
         {% if site.email %}
-        <p style="margin-top: 0.5rem; font-size: 0.875rem;">
-          <a href="mailto:{{ site.email }}" style="color: var(--primary-color);">Contact</a>
+        <p class="mt-2 text-[13px]">
+          <a href="mailto:{{ site.email }}" class="text-link">Contact</a>
         </p>
         {% endif %}
       </div>

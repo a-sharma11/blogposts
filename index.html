@@ -2,67 +2,64 @@
 layout: default
 ---
 
-<div class="home">
-  <h1 class="page-heading">Welcome</h1>
+<div class="max-w-[860px] mx-auto px-[14px] lg:px-0">
   
-  <p style="font-size: 1.125rem; line-height: 1.8; color: var(--text-secondary);">
+  
+  <p class="text-[1.125rem] leading-[1.8] text-text mb-[22px]">
     I'm in the middle of migrating my blog posts to GitHub Pages. It's slow work but will be done soon!
   </p>
   
-  <!-- Mobile categories (hidden on desktop) -->
-  <div class="home-categories-mobile">
-    <h2>Browse by Category</h2>
-    <div class="category-links-mobile">
-      {% assign categories = site.posts | map: "categories" | flatten | uniq | sort %}
-      {% for category in categories %}
-        {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
-        <div class="category-link-box-mobile">
-          <h3><a href="{{ '/' | relative_url }}{{ category }}.html">{{ category | capitalize }}</a></h3>
-          <p class="category-count">
-            <span class="count-number">{{ category_posts.size }}</span>
-            <span class="count-label">{% if category_posts.size == 1 %}article{% else %}articles{% endif %}</span>
-          </p>
-        </div>
-      {% endfor %}
-    </div>
-  </div>
-  
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Recent Posts" }}</h2>
-    <ul class="post-list">
+    <div class="mb-[22px]">
+      <h2 class="text-[22px] mb-[10px] text-text font-bold">Categories</h2>
+      <nav class="flex flex-wrap gap-y-[10px] gap-x-[14px]">
+        {% assign categories = site.posts | map: "categories" | flatten | uniq | sort %}
+        {% for category in categories %}
+          {% assign category_posts = site.posts | where_exp: "post", "post.categories contains category" %}
+          <a href="{{ '/' | relative_url }}{{ category }}.html" class="inline-block px-[10px] py-[6px] border border-hairline rounded-[6px] bg-bg text-text font-medium text-[0.9375rem] no-underline transition-all hover:bg-soft hover:no-underline">
+            {{ category | capitalize }} ({{ category_posts.size }})
+          </a>
+        {% endfor %}
+      </nav>
+    </div>
+    
+    <h2 class="text-[22px] mt-[22px] mb-[10px] text-text font-bold">{{ page.list_title | default: "Recent Posts" }}</h2>
+    <ul class="list-none p-0 m-0 flex flex-col gap-[10px]">
       {%- for post in site.posts limit: 5 -%}
-      <li>
+      <li class="bg-bg border border-hairline rounded-[10px] p-[14px] transition-all hover:border-text">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
+        <span class="inline-flex items-center gap-[10px] text-[13px] text-muted mb-[6px]">{{ post.date | date: date_format }}</span>
+        <h3 class="m-0">
+          <a class="text-base font-semibold text-text block mb-[6px] transition-all hover:text-link hover:no-underline" href="{{ post.url | relative_url }}">
             {{ post.title | escape }}
           </a>
         </h3>
         {%- if post.categories.size > 0 -%}
-        <div class="post-categories">
+        <div class="mt-[6px] mb-0">
           {% for category in post.categories %}
-            <a href="{{ '/' | relative_url }}{{ category }}.html" class="category-badge">{{ category | capitalize }}</a>
+            <a href="{{ '/' | relative_url }}{{ category }}.html" class="inline-block px-[10px] py-[4px] mr-[6px] bg-bg text-text border border-hairline rounded-full text-[13px] font-medium capitalize transition-all hover:bg-soft hover:no-underline">{{ category | capitalize }}</a>
           {% endfor %}
         </div>
         {%- endif -%}
         {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+          <div class="text-text leading-[1.7] mt-[10px]">
+            {{ post.excerpt }}
+          </div>
         {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
     
     {%- if site.posts.size > 5 -%}
-    <div style="text-align: center; margin-top: var(--spacing-xl);">
-      <a href="{{ '/posts' | relative_url }}" style="display: inline-block; padding: var(--spacing-sm) var(--spacing-lg); background: var(--primary-color); color: white; border-radius: var(--radius-md); font-weight: 600; transition: all 0.2s; box-shadow: var(--shadow-sm);">
+    <div class="text-center mt-[40px]">
+      <a href="{{ '/posts' | relative_url }}" class="inline-block px-[14px] py-[10px] bg-text text-bg rounded-full font-semibold transition-all hover:bg-muted no-underline">
         View all posts →
       </a>
     </div>
     {%- endif -%}
 
-    <p class="rss-subscribe">subscribe <a href="{{ '/feed.xml' | relative_url }}">via RSS</a></p>
+    <p class="text-center mt-[40px] pt-[18px] border-t border-hairline text-text">subscribe <a href="{{ '/feed.xml' | relative_url }}" class="text-link font-semibold">via RSS</a></p>
   {%- endif -%}
 
 </div>

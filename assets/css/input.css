@@ -1,0 +1,262 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Minimal custom styles - only for things that can't be done with Tailwind */
+@layer base {
+  body {
+    @apply font-sans text-base leading-reading text-text tracking-[0.1px] antialiased;
+  }
+
+  h1 {
+    @apply text-[clamp(28px,4vw,40px)] leading-[1.15] tracking-tight font-bold my-[10px] mb-[6px] text-text;
+  }
+
+  h2 {
+    @apply text-[20px] lg:text-[22px] tracking-normal font-bold mb-[10px] text-text;
+  }
+
+  h3 {
+    @apply text-[15px] lg:text-base tracking-normal font-bold my-[18px] mb-2 text-text;
+  }
+
+  p {
+    @apply my-[10px] text-text;
+  }
+
+  a {
+    @apply text-link no-underline;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  /* Code blocks */
+  code {
+    @apply bg-soft px-[6px] py-[2px] rounded text-[0.875em] font-mono text-text;
+  }
+
+  pre {
+    @apply bg-[#1e293b] text-[#e2e8f0] p-[18px] rounded overflow-x-auto my-[18px];
+  }
+
+  pre code {
+    @apply bg-transparent text-inherit p-0;
+  }
+
+  blockquote {
+    @apply border-l-[3px] border-text bg-bg p-[14px] my-[14px] text-text;
+  }
+
+  ul, ol {
+    @apply my-[10px] ml-[18px] pl-0;
+  }
+
+  li {
+    @apply my-[6px];
+  }
+
+  hr {
+    @apply h-px bg-hairline border-0 my-[18px];
+  }
+
+  img {
+    @apply max-w-full h-auto block my-[18px] mx-auto;
+  }
+
+  table {
+    @apply block overflow-x-auto;
+  }
+
+  /* Post content specific styles */
+  .post-content h2 {
+    @apply mt-[22px] mb-[10px] pb-[10px] border-b border-hairline;
+  }
+
+  .post-content h3 {
+    @apply mt-[18px] mb-[10px];
+  }
+
+  .post-content p {
+    @apply my-[10px];
+  }
+
+  .post-content ul,
+  .post-content ol {
+    @apply my-[10px] ml-[18px];
+  }
+
+  .post-content a {
+    @apply text-link;
+  }
+
+  .post-content a:hover {
+    @apply underline;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .container {
+    @apply max-w-container mx-auto px-[22px] py-[40px] pb-[80px];
+  }
+
+  .wrapper {
+    @apply max-w-container mx-auto px-[22px];
+  }
+
+  .kicker {
+    @apply text-[13px] uppercase tracking-wide text-muted;
+  }
+
+  .nav-pill {
+    @apply px-[10px] py-[6px] border border-hairline rounded-full bg-bg text-text font-medium text-[0.9375rem] transition-all;
+  }
+
+  .nav-pill:hover {
+    @apply bg-soft no-underline;
+  }
+
+  .callout {
+    @apply border-l-[3px] border-hairline bg-soft p-[14px] my-[14px] text-text;
+  }
+
+  .callout-right {
+    @apply border border-hairline bg-soft p-[14px] my-[14px] text-text;
+  }
+
+  .quote {
+    @apply border-l-[3px] border-text bg-bg p-[14px] my-[14px] text-text;
+  }
+
+  .level-box {
+    @apply border border-hairline rounded-[10px] bg-bg p-[14px] my-[10px];
+  }
+
+  /* Right sidebar callout box (like "What defines a circle") */
+  .callout-sidebar {
+    @apply border border-hairline bg-soft p-[14px] text-muted;
+  }
+
+  .callout-sidebar h3 {
+    @apply text-text font-bold mb-[10px] text-base;
+  }
+
+  .callout-sidebar p {
+    @apply text-muted text-[0.9375rem] leading-[1.6] my-[6px];
+  }
+}
+
+/* Responsive video container */
+.video-container {
+  @apply relative pb-[56.25%] h-0 overflow-hidden max-w-full bg-black rounded my-[18px];
+}
+
+.video-container iframe {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+/* Scrollbar styling for sidebar */
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #e9e9e9;
+  border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: #5a5a5a;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: clamp(24px, 5vw, 32px);
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  /* Better touch targets */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Adjust padding for mobile */
+  .max-w-\[860px\] {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Better spacing on mobile */
+  p {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  /* Post content adjustments */
+  .post-content h2 {
+    margin-top: 18px;
+    font-size: 18px;
+  }
+
+  .post-content h3 {
+    margin-top: 14px;
+    font-size: 16px;
+  }
+
+  /* Category pills - ensure they wrap nicely */
+  nav.flex {
+    gap: 8px 10px;
+  }
+
+  /* Post list items - better padding on mobile */
+  li.bg-bg {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* Even tighter padding on very small screens */
+  .max-w-\[860px\] {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
