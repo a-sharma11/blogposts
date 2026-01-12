@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Video Feed to Actionable Compliance Alerts - AI Agents in Action"
-date: 2026-01-12 10:00:00 -0000
+date: 2026-01-12
 categories: ai
 ---
 

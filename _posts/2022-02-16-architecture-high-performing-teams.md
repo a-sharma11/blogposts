@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Architecture & High Performing Teams"
-date: 2022-02-16 10:00:00 -0000
+date: 2022-02-16
 categories: architecture
 ---
 

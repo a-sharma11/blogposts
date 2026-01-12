@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Monolithic to Microservices + Docker = SDLC on Steroids!"
-date: 2020-06-01 10:00:00 -0000
+date: 2020-06-01
 categories: microservices
 ---
 

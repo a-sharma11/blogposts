@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Ten Transformative Findings in Management"
-date: 2023-09-07 10:00:00 -0000
+date: 2023-09-07
 categories: management
 ---
 

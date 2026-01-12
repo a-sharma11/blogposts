@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Break Functional and Orchestration Responsibilities for Better Testability"
-date: 2019-04-10 10:00:00 -0000
+date: 2019-04-10
 categories: microservices
 ---
 

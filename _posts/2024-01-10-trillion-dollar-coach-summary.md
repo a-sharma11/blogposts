@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "The Trillion Dollar Coach: Key Rules for Managers"
-date: 2024-01-10 10:00:00 -0000
+date: 2024-01-10
 categories: [management, books]
 ---
 

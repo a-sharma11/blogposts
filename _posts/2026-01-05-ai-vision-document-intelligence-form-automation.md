@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "When AI Vision Meets Document Intelligence: Building Context-Aware Form Automation"
-date: 2026-01-05 10:00:00 -0000
+date: 2026-01-05
 categories: ai
 ---
 
