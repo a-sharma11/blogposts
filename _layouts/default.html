@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Redirect if URL doesn't have trailing slash (for baseurl) -->
+    {% if site.baseurl != "" %}
+    <script>
+      if (window.location.pathname === '{{ site.baseurl }}' && !window.location.pathname.endsWith('/')) {
+        window.location.replace('{{ site.baseurl }}/');
+      }
+    </script>
+    {% endif %}
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ page.description | default: site.description | default: 'A collection of blog posts' }}">
     <meta name="author" content="{{ site.author }}">

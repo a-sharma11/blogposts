@@ -17,19 +17,23 @@ layout: default
     <h1 class="text-[clamp(28px,4vw,40px)] mb-0 text-text leading-[1.15] tracking-tight font-bold p-name" itemprop="name headline">{{ page.title | escape }}</h1>
   </header>
 
+  {% if page.callout %}
   <div class="grid grid-cols-1 lg:grid-cols-[1.35fr_0.65fr] gap-[18px] lg:gap-[28px]">
     <div class="text-base leading-reading text-text tracking-[0.1px] e-content" itemprop="articleBody">
       {{ content }}
     </div>
     <aside class="lg:sticky lg:top-[100px] lg:self-start lg:max-h-[calc(100vh-120px)] lg:overflow-y-auto space-y-[14px]">
-      {% if page.callout %}
       <div class="callout-sidebar">
         {% if page.callout.title %}<h3>{{ page.callout.title }}</h3>{% endif %}
         {% if page.callout.content %}{{ page.callout.content | markdownify }}{% endif %}
       </div>
-      {% endif %}
     </aside>
   </div>
+  {% else %}
+  <div class="text-base leading-reading text-text tracking-[0.1px] e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  {% endif %}
 
   <div class="mt-[40px] pt-[18px] border-t border-hairline">
     <p class="text-center mb-[14px]">
