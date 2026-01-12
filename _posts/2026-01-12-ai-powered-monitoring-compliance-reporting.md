@@ -43,7 +43,7 @@ The pipeline processes video feeds through specialized AI agents:
 
 **Agent 2: Frame Classification** uses a vision model to classify frames into categories (Bar, Kitchen, Dining Area, etc.). This matters because compliance rules differ by location.
 
-**Agent 3: Compliance Monitor** uses GPT Vision to check classified frames against a category-specific ruleset. It understands context—missing gloves in a kitchen is a violation, but not in a bar.
+**Agent 3: Compliance Monitor** Uses GPT Vision to check classified frames against a category-specific ruleset. It understands context—for example, bare-hand contact with ready-to-eat items is a violation, while handling sealed containers or non-food surfaces may not be.
 
 **Agent 4: Sentiment Analysis & Reporting** runs in parallel, monitoring social media feeds for customer sentiment. It generates reports and triggers alerts when negative trends emerge.
 
